@@ -1,10 +1,8 @@
-CREATING THE MINT ACCOUNT
-Public Key is: 9yq8BgSG7XahLBKivhTiHKbrhXfHTA8Yk4xixgyg8yyd
-New Mint Account => 8SGaVw1GMPQUxEJErzUscvh5e2rtr5WoxpCg8HtGXWD4 
+# BILLy TOKEN
 
-CREATING THE ASSOCIATED TOKEN ACCOUNT LINKING MINT ACCOUNT AND DEV WALLET
-Your ata is: 5ZJPdnXoXjyEEK7V8ieMCCnamVkPUybTbaAUwHF7SXo
-Your mint txid: 4u2ayuAgBeEPveFQewWpJV58FTfLBmNPMSEwP6pSdTNCBsbbmR1ww53yoMj7yDzyvsXzEYgWGL7hhCL7rCCfoBDv
+## Creating SPL Tokens
 
-ADDING METADATA
-2zM5SWAxKboavV24egJJ4AvF5hWjhc1E3byZwhJJrQFCh4C37FHwZiK4dzCZKZBpNEtUx4z9KGS3zdZdfRK8RVWN
+### BILLy Token
+![BILLy Token screenshot from solana explorer](billy_token.png "BILLy Token on Devnet")
+Mint Transaction Signature: 4u2ayuAgBeEPveFQewWpJV58FTfLBmNPMSEwP6pSdTNCBsbbmR1ww53yoMj7yDzyvsXzEYgWGL7hhCL7rCCfoBDv
+Total Supply: 10,000 BIL
