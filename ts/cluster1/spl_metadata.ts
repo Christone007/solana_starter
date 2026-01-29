@@ -1,4 +1,4 @@
-import wallet from "../turbin3-wallet.json"
+import wallet from "/home/christone/.config/solana/id.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { 
     createMetadataAccountV3, 
