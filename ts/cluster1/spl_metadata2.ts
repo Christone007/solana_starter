@@ -23,20 +23,30 @@ umi.use(keypairIdentity(keypair))
 // Your token mint address
 const mintAddress = publicKey('8mqVHrS9Ga1P4fdjFUd45CZ17Dfa88MsULC3kjzt5GVp');
 
-// Fetch existing token data
-const asset = await fetchDigitalAsset(umi, mintAddress)
 
-// Update the token metadata (name, symbol, and URI)
-await updateV1(umi, {
-  mint: mintAddress,
-  authority: umi.identity,
-  data: {
-    ...asset.metadata,
-    name: 'BILLy Token',
-    symbol: 'BIL',
-    uri: 'https://example.com/updated-metadata.json',
-  },
-}).sendAndConfirm(umi)
+(async () => {
+    try {
+        // Fetch existing token data
+        const asset = await fetchDigitalAsset(umi, mintAddress);
+
+        // Update the token metadata (name, symbol, and URI)
+        await updateV1(umi, {
+            mint: mintAddress,
+            authority: umi.identity,
+            data: {
+                ...asset.metadata,
+                name: 'BILLy Token',
+                symbol: 'BIL',
+                uri: 'https://raw.githubusercontent.com/Christone007/solana_starter/refs/heads/main/ts/cluster1/metadata.json',
+            },
+        }).sendAndConfirm(umi)
+    } catch (error) {
+        console.log(`Oops, something went wrong: ${error}`)
+    }
+})
+
+
+
 
 console.log('Token metadata updated successfully')
 console.log('Mint:', mintAddress)
