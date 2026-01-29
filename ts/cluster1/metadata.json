@@ -1,6 +1,6 @@
 {
-  "name": "UBILLy Token",
+  "name": "BILLy Token",
   "symbol": "BIL",
   "description": "A new token for Billy accounts",
-  "image": "https://arweave.net/new-image-hash"
+  "image": "https://raw.githubusercontent.com/Christone007/solana_starter/refs/heads/main/ts/cluster1/billy.jpg"
 }
