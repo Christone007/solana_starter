@@ -10,7 +10,7 @@ import { createSignerFromKeypair, signerIdentity, publicKey } from "@metaplex-fo
 import { bs58 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
 
 // Define our Mint address
-const mint = publicKey("<mint address>")
+const mint = publicKey("8SGaVw1GMPQUxEJErzUscvh5e2rtr5WoxpCg8HtGXWD4");
 
 // Create a UMI connection
 const umi = createUmi('https://api.devnet.solana.com');
@@ -20,29 +20,43 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
 
 (async () => {
     try {
+
+        
         // Start here
-        // let accounts: CreateMetadataAccountV3InstructionAccounts = {
-        //     ???
-        // }
+        let accounts: CreateMetadataAccountV3InstructionAccounts = {
+            mint: mint,
+            mintAuthority: signer,
+        }
 
-        // let data: DataV2Args = {
-        //     ???
-        // }
+        let data: DataV2Args = {
+            name: "BILLy Token",
+            symbol: "BIL",
+            uri: "https://raw.githubusercontent.com/Christone007/solana_starter/refs/heads/main/ts/cluster1/metadata.json",
+            sellerFeeBasisPoints: 0,
+            creators: null,
+            collection: null,
+            uses: null
+        }
 
-        // let args: CreateMetadataAccountV3InstructionArgs = {
-        //     ???
-        // }
+        let args: CreateMetadataAccountV3InstructionArgs = {
+            data: data,
+            isMutable: false,
+            collectionDetails: null
+        }
 
-        // let tx = createMetadataAccountV3(
-        //     umi,
-        //     {
-        //         ...accounts,
-        //         ...args
-        //     }
-        // )
+        let tx = createMetadataAccountV3(
+            umi,
+            {
+                ...accounts,
+                ...args
+            }
+        )
+        console.log("Test Code block");
+        console.log(tx);
 
-        // let result = await tx.sendAndConfirm(umi);
-        // console.log(bs58.encode(result.signature));
+        let result = await tx.sendAndConfirm(umi);
+        console.log(bs58.encode(result.signature));
+        
     } catch(e) {
         console.error(`Oops, something went wrong: ${e}`)
     }

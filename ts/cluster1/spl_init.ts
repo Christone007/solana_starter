@@ -10,7 +10,7 @@ console.log("Public Key is: " + keypair.publicKey);
 
 //Create a Solana devnet connection
 const commitment: Commitment = "confirmed";
-const connection = new Connection("http://localhost:8899", commitment);
+const connection = new Connection("https://api.devnet.solana.com", commitment);
 
 (async () => {
     try {
@@ -19,7 +19,7 @@ const connection = new Connection("http://localhost:8899", commitment);
             connection,
             keypair,
             keypair.publicKey,
-            null,
+            keypair.publicKey,
             6
         );
 

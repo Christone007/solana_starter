@@ -7,12 +7,12 @@ const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
 
 //Create a Solana devnet connection
 const commitment: Commitment = "confirmed";
-const connection = new Connection("http://localhost:8899", commitment);
+const connection = new Connection("https://api.devnet.solana.com", commitment);
 
 const token_decimals = 1_000_000n;
 
 // Mint address
-const mint = new PublicKey("8mqVHrS9Ga1P4fdjFUd45CZ17Dfa88MsULC3kjzt5GVp");
+const mint = new PublicKey("8SGaVw1GMPQUxEJErzUscvh5e2rtr5WoxpCg8HtGXWD4");
 
 (async () => {
     try {
@@ -33,7 +33,7 @@ const mint = new PublicKey("8mqVHrS9Ga1P4fdjFUd45CZ17Dfa88MsULC3kjzt5GVp");
             mint,
             ata.address,
             keypair.publicKey,
-            1007 * 1_000_000
+            10000 * 1_000_000
         )
         console.log(`Your mint txid: ${mintTx}`);
 
